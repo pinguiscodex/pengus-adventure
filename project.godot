@@ -14,7 +14,6 @@ config/name="Pengus Adventure"
 config/description="Visit Pengu on his great adventure in antarctica!"
 run/main_scene="uid://cf7frk6r6wxmu"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [display]
 

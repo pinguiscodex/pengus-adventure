@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cf7frk6r6wxmu"]
 
 [ext_resource type="Script" uid="uid://buc43juaxkwr4" path="res://scenes/main_menu/main_menu.gd" id="1_uqeha"]
-[ext_resource type="Texture2D" uid="uid://2h8gct8u1s0h" path="res://assets/buttons/settings/settings.png" id="2_uqeha"]
-[ext_resource type="Texture2D" uid="uid://c5albp7fhfp2l" path="res://assets/buttons/play/play.png" id="2_wem23"]
-[ext_resource type="Texture2D" uid="uid://cu50xw0875q0c" path="res://assets/buttons/quit/quit.png" id="3_wem23"]
+[ext_resource type="Texture2D" uid="uid://c2upwjq5e2lqa" path="res://assets/buttons/play/ice/Play.png" id="3_3ovsr"]
+[ext_resource type="Texture2D" uid="uid://do7mpeq0mkpm8" path="res://assets/buttons/settings/ice/Settings.png" id="4_wem23"]
+[ext_resource type="Texture2D" uid="uid://ha6mywvrx1oc" path="res://assets/buttons/quit/ice/Quit.png" id="5_3ovsr"]
 [ext_resource type="Texture2D" uid="uid://jkkaawrhfn10" path="res://assets/backgrounds/main_menu.png" id="5_wem23"]
 
 [node name="main_menu" type="Node2D"]
@@ -19,7 +19,7 @@ offset_left = 491.0
 offset_top = 157.0
 offset_right = 749.0
 offset_bottom = 251.0
-texture_normal = ExtResource("2_wem23")
+texture_normal = ExtResource("3_3ovsr")
 stretch_mode = 5
 
 [node name="settings" type="TextureButton" parent="."]
@@ -27,7 +27,7 @@ offset_left = 491.0
 offset_top = 256.0
 offset_right = 749.0
 offset_bottom = 350.0
-texture_normal = ExtResource("2_uqeha")
+texture_normal = ExtResource("4_wem23")
 stretch_mode = 5
 
 [node name="quit" type="TextureButton" parent="."]
@@ -35,7 +35,7 @@ offset_left = 491.0
 offset_top = 356.0
 offset_right = 749.0
 offset_bottom = 450.0
-texture_normal = ExtResource("3_wem23")
+texture_normal = ExtResource("5_3ovsr")
 stretch_mode = 5
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
