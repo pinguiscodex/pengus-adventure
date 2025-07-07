@@ -29,24 +29,19 @@ shape = SubResource("RectangleShape2D_gb53w")
 
 [node name="borders" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="borders"]
+[node name="CollisionShape2D_right" type="CollisionShape2D" parent="borders"]
 position = Vector2(1295.94, 360)
 shape = SubResource("RectangleShape2D_1fp7r")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders"]
+[node name="CollisionShape2D_left" type="CollisionShape2D" parent="borders"]
 position = Vector2(-15.9688, 360)
 shape = SubResource("RectangleShape2D_6m72w")
 
 [node name="ground" type="StaticBody2D" parent="."]
 
-[node name="Ground" type="Sprite2D" parent="ground"]
+[node name="ground_texture" type="Sprite2D" parent="ground"]
 position = Vector2(167.813, 658.875)
 scale = Vector2(2.91848, 3.30405)
-texture = ExtResource("2_sl2e5")
-
-[node name="Ground2" type="Sprite2D" parent="ground"]
-position = Vector2(503.406, 659.063)
-scale = Vector2(2.9288, 3.30068)
 texture = ExtResource("2_sl2e5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
