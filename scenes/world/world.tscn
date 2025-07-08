@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://du506r1ltktke"]
+[gd_scene load_steps=8 format=3 uid="uid://du506r1ltktke"]
 
 [ext_resource type="PackedScene" uid="uid://cd1g8oq4t2683" path="res://characters/pengu/pengu.tscn" id="1_dphjl"]
 [ext_resource type="Texture2D" uid="uid://c2tdfe4meop8p" path="res://assets/map/ground/Ground.png" id="2_sl2e5"]
+[ext_resource type="Texture2D" uid="uid://dsuyggsmx2y82" path="res://assets/houses/iglu/Iglu.png" id="3_1fp7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gb53w"]
-size = Vector2(523, 44)
+size = Vector2(309, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fp7r"]
 size = Vector2(31.875, 720)
@@ -13,7 +14,7 @@ size = Vector2(31.875, 720)
 size = Vector2(31.9375, 720)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5dby"]
-size = Vector2(115.192, 36.9366)
+size = Vector2(344.7, 36.6278)
 
 [node name="world" type="Node2D"]
 
@@ -24,29 +25,48 @@ scale = Vector2(4, 4)
 [node name="void" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
-position = Vector2(585, 742)
+position = Vector2(1157.5, 741)
 shape = SubResource("RectangleShape2D_gb53w")
 
 [node name="borders" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D_right" type="CollisionShape2D" parent="borders"]
+[node name="border_right" type="CollisionShape2D" parent="borders"]
 position = Vector2(1295.94, 360)
 shape = SubResource("RectangleShape2D_1fp7r")
 
-[node name="CollisionShape2D_left" type="CollisionShape2D" parent="borders"]
+[node name="border_left" type="CollisionShape2D" parent="borders"]
 position = Vector2(-15.9688, 360)
 shape = SubResource("RectangleShape2D_6m72w")
 
 [node name="ground" type="StaticBody2D" parent="."]
 
-[node name="ground_texture" type="Sprite2D" parent="ground"]
+[node name="ground_texture1" type="Sprite2D" parent="ground"]
+texture_repeat = 2
 position = Vector2(167.813, 658.875)
 scale = Vector2(2.91848, 3.30405)
 texture = ExtResource("2_sl2e5")
 
+[node name="ground_texture2" type="Sprite2D" parent="ground"]
+texture_repeat = 2
+position = Vector2(503, 659)
+scale = Vector2(2.91848, 3.30405)
+texture = ExtResource("2_sl2e5")
+
+[node name="ground_texture3" type="Sprite2D" parent="ground"]
+texture_repeat = 2
+position = Vector2(838, 659)
+scale = Vector2(2.91848, 3.30405)
+texture = ExtResource("2_sl2e5")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
-position = Vector2(167, 658)
+position = Vector2(503, 658.51)
 scale = Vector2(2.91848, 3.30405)
 shape = SubResource("RectangleShape2D_v5dby")
+
+[node name="Iglu" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(355, 476)
+scale = Vector2(5, 5)
+texture = ExtResource("3_1fp7r")
 
 [connection signal="body_entered" from="void" to="pengu" method="_on_void_body_entered"]
