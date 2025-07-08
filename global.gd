@@ -1,0 +1,6 @@
+extends Node
+
+# Global variables
+
+
+# ----------------------- #

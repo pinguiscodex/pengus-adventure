@@ -31,8 +31,6 @@ func _physics_process(delta):
 	elif direction == 1:
 		get_node("AnimatedSprite2D").flip_h = false
 		
-		
-		
 	if Input.is_action_just_pressed("ui_slide") and !is_sliding and is_on_floor():
 		anim.play("Slide")
 		is_sliding = true
@@ -52,9 +50,6 @@ func _physics_process(delta):
 		move_and_slide()
 		return
 
-		
-		
-		
 	if direction:
 		velocity.x = direction * SPEED
 		if velocity.y == 0:
