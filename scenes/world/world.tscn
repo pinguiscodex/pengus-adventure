@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://brbs58otxayuh" path="res://assets/defence_walls/wooden_defence_wall.PNG" id="4_6m72w"]
 [ext_resource type="Texture2D" uid="uid://d4fef1pxrg137" path="res://assets/user_interactions/key_images/E.PNG" id="5_v5dby"]
 [ext_resource type="Script" uid="uid://b7asn4m3mbx75" path="res://scenes/world/interaction_keys/e.gd" id="7_bq33v"]
-[ext_resource type="Script" path="res://scenes/world/fps-counter.gd" id="8_j2gmx"]
+[ext_resource type="Script" uid="uid://d3wupkno0crbp" path="res://scenes/world/fps-counter.gd" id="8_j2gmx"]
 [ext_resource type="PackedScene" uid="uid://cg0vbadlms2jn" path="res://characters/seal/seal.tscn" id="9_1yooq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gb53w"]

@@ -20,7 +20,7 @@ config/icon="uid://dsuyggsmx2y82"
 [autoload]
 
 Global="*res://global.gd"
-GlobalSetings="*res://global_settings.gd"
+GlobalSettings="*res://global_settings.gd"
 
 [display]
 

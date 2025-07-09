@@ -1,22 +1,14 @@
 extends Node
 
 var vsync: bool = true
+var show_fps: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_settings()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func save_settings():
 	var config = ConfigFile.new()
-
-	# Set your custom settings
-	config.set_value("graphics", "vsync", true)
-	config.set_value("graphics", "show_fps", false)
 
 	# Save to disk (in user://)
 	var err = config.save("user://settings.cfg")
@@ -28,9 +20,16 @@ func load_settings():
 	var err = config.load("user://settings.cfg")
 	if err != OK:
 		print("No settings file found or error loading:", err)
+		config.set_value("graphics", "vsync", true)
+		config.set_value("graphics", "show_fps", false)
+		save_settings()
 		return
-	
-	var volume = config.get_value("audio", "master_volume", 1.0)
-	var fullscreen = config.get_value("graphics", "fullscreen", false)
+	# Load values or fallback to default if not found
+	vsync = config.get_value("graphics", "vsync", true)
+	show_fps = config.get_value("graphics", "show_fps", false)
+	print("VSync: ",vsync, "Show FPS: ", show_fps)
 
-	print("Volume:", volume, " Fullscreen:", fullscreen)
+	if vsync:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+	else:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)

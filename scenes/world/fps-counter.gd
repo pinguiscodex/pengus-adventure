@@ -1,4 +1,8 @@
 extends Label
 
 func _process(delta: float) -> void:
-	text = "FPS: " + str(Engine.get_frames_per_second())
+	if GlobalSettings.show_fps:
+		visible = true
+		text = "FPS: " + str(Engine.get_frames_per_second())
+	else:
+		visible = false
