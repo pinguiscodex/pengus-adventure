@@ -15,7 +15,7 @@ config/description="Visit Pengu on his great adventure in antarctica!"
 config/version="0.3"
 run/main_scene="uid://cf7frk6r6wxmu"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="uid://dsuyggsmx2y82"
+config/icon="uid://cnauilj38johp"
 
 [autoload]
 
