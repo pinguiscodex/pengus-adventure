@@ -10,9 +10,10 @@ func _ready() -> void:
 var original_position = Vector2(352.0, 450.0)
 
 func _on_door_body_entered(body: Node2D) -> void:
-	visible = true
-	player_stands_in_door = true
-	start_wiggle()
+	if body.name == "penguin":
+		visible = true
+		player_stands_in_door = true
+		start_wiggle()
 
 func _on_door_body_exited(body: Node2D) -> void:
 	visible = false

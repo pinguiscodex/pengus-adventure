@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cf7frk6r6wxmu"]
+[gd_scene load_steps=10 format=3 uid="uid://cf7frk6r6wxmu"]
 
 [ext_resource type="Script" uid="uid://buc43juaxkwr4" path="res://scenes/main_menu/main_menu.gd" id="1_uqeha"]
 [ext_resource type="Texture2D" uid="uid://c2upwjq5e2lqa" path="res://assets/buttons/play/ice/Play.png" id="3_3ovsr"]
 [ext_resource type="Texture2D" uid="uid://do7mpeq0mkpm8" path="res://assets/buttons/settings/ice/Settings.png" id="4_wem23"]
 [ext_resource type="Texture2D" uid="uid://ha6mywvrx1oc" path="res://assets/buttons/quit/ice/Quit.png" id="5_3ovsr"]
 [ext_resource type="Texture2D" uid="uid://jkkaawrhfn10" path="res://assets/backgrounds/main_menu.png" id="5_wem23"]
+[ext_resource type="Texture2D" uid="uid://drp8aa7cescum" path="res://assets/windows/settings/settings_window.png" id="6_5seab"]
+[ext_resource type="Texture2D" uid="uid://vqbd6cs6vncj" path="res://assets/buttons/close/close.png" id="7_4xg86"]
+[ext_resource type="Script" uid="uid://hwsywlhucst0" path="res://scenes/main_menu/settings/settings_window.gd" id="7_thkx5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xg86"]
 
 [node name="main_menu" type="Node2D"]
 script = ExtResource("1_uqeha")
@@ -38,5 +43,54 @@ offset_bottom = 450.0
 texture_normal = ExtResource("5_3ovsr")
 stretch_mode = 5
 
+[node name="settings_window" type="Sprite2D" parent="."]
+position = Vector2(600, 345)
+scale = Vector2(4, 4)
+texture = ExtResource("6_5seab")
+script = ExtResource("7_thkx5")
+
+[node name="close" type="TextureButton" parent="settings_window"]
+offset_left = 43.0
+offset_top = -55.75
+offset_right = 59.0
+offset_bottom = -39.75
+scale = Vector2(0.575, 0.575)
+tooltip_text = "Close this window"
+texture_normal = ExtResource("7_4xg86")
+
+[node name="VSyncToggle" type="CheckButton" parent="settings_window"]
+anchors_preset = -1
+anchor_left = 0.514
+anchor_top = 0.221
+anchor_right = 0.514
+anchor_bottom = 0.221
+offset_left = -94.304
+offset_top = -70.973
+offset_right = -1.304
+offset_bottom = -39.973
+scale = Vector2(0.8, 0.8)
+tooltip_text = "Cap the FPS to the maximum framrate of your monitor"
+theme_override_constants/outline_size = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4xg86")
+text = "Vsync"
+
+[node name="FpsToggle" type="CheckButton" parent="settings_window"]
+anchors_preset = -1
+anchor_left = 0.514
+anchor_top = 0.221
+anchor_right = 0.514
+anchor_bottom = 0.221
+offset_left = -94.304
+offset_top = -70.973
+offset_right = -1.304
+offset_bottom = -39.973
+scale = Vector2(0.8, 0.8)
+tooltip_text = "Cap the FPS to the maximum framrate of your monitor"
+theme_override_constants/outline_size = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4xg86")
+text = "Vsync"
+
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="settings" to="settings_window" method="_on_settings_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="settings_window/close" to="settings_window" method="_on_close_pressed"]

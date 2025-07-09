@@ -1,13 +1,22 @@
 extends CharacterBody2D
 
-func _physics_process(delta: float) -> void:
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	move_and_slide()
+@export var move_speed: float = 50 # pixels per second
+@onready var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var penguin: Node2D = get_node("../penguin")
 
-@onready var penguin = get_node("../penguin")
-func _process(delta: float) -> void:
-	if penguin.position.x > position.x:
-		position.x += 1
+func _physics_process(delta: float) -> void:
+	# Apply gravity
+	if not is_on_floor():
+		velocity.y += gravity * delta
 	else:
-		position.x -= 1
+		velocity.y = 0.0
+
+	# Move toward penguin
+	if penguin.position.x > position.x:
+		velocity.x = move_speed
+	elif penguin.position.x < position.x:
+		velocity.x = -move_speed
+	else:
+		velocity.x = 0.0
+
+	move_and_slide()
