@@ -86,7 +86,6 @@ offset_top = -51.723
 offset_right = 35.446
 offset_bottom = -20.723
 scale = Vector2(0.6, 0.6)
-tooltip_text = "Cap the FPS to the maximum framrate of your monitor"
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 15
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4xg86")

@@ -36,6 +36,14 @@ scale = Vector2(0.3, 0.3)
 position = Vector2(67, 551)
 scale = Vector2(4, 4)
 
+[node name="fps-counter" type="Label" parent="penguin"]
+offset_left = -151.5
+offset_top = -82.25
+offset_right = -74.5
+offset_bottom = -59.25
+scale = Vector2(0.3, 0.3)
+script = ExtResource("8_j2gmx")
+
 [node name="void" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
@@ -97,16 +105,9 @@ scale = Vector2(4, 4.375)
 texture = ExtResource("5_v5dby")
 script = ExtResource("7_bq33v")
 
-[node name="fps-counter" type="Label" parent="."]
-offset_left = 43.0
-offset_top = 344.0
-offset_right = 131.0
-offset_bottom = 379.0
-script = ExtResource("8_j2gmx")
-
 [node name="Underground" type="Sprite2D" parent="."]
-position = Vector2(640, 815.5)
-scale = Vector2(155.667, 27.2857)
+position = Vector2(640, 838.5)
+scale = Vector2(155.667, 33.8571)
 texture = ExtResource("10_gb53w")
 
 [connection signal="body_entered" from="void" to="penguin" method="_on_void_body_entered"]

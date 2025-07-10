@@ -1,6 +1,6 @@
 extends Node
 
-const save_location = "res://SaveFile.json"
+const save_location = "user://settingsjson"
 
 var contents_to_save: Dictionary = {
 	"vsync": true,
