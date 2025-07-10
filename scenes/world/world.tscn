@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://du506r1ltktke"]
+[gd_scene load_steps=16 format=3 uid="uid://du506r1ltktke"]
 
 [ext_resource type="PackedScene" uid="uid://cd1g8oq4t2683" path="res://characters/penguin/penguin.tscn" id="1_dphjl"]
-[ext_resource type="Script" path="res://scenes/world/world.gd" id="1_t5ptc"]
+[ext_resource type="Script" uid="uid://d4kg1jtks5c1l" path="res://scenes/world/world.gd" id="1_t5ptc"]
 [ext_resource type="Texture2D" uid="uid://c2tdfe4meop8p" path="res://assets/map/ground/Ground.png" id="2_sl2e5"]
 [ext_resource type="Texture2D" uid="uid://dsuyggsmx2y82" path="res://assets/houses/iglu/Iglu.png" id="3_1fp7r"]
 [ext_resource type="Texture2D" uid="uid://brbs58otxayuh" path="res://assets/defence_walls/wooden_defence_wall.PNG" id="4_6m72w"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b7asn4m3mbx75" path="res://scenes/world/interaction_keys/e.gd" id="7_bq33v"]
 [ext_resource type="Script" uid="uid://d3wupkno0crbp" path="res://scenes/world/fps-counter.gd" id="8_j2gmx"]
 [ext_resource type="PackedScene" uid="uid://cg0vbadlms2jn" path="res://characters/seal/seal.tscn" id="9_1yooq"]
+[ext_resource type="Texture2D" uid="uid://camwoo4xgbsrp" path="res://assets/map/ground/Underground.png" id="10_gb53w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gb53w"]
 size = Vector2(309, 44)
@@ -28,7 +29,8 @@ size = Vector2(600.064, 37.0033)
 script = ExtResource("1_t5ptc")
 
 [node name="Seal" parent="." instance=ExtResource("9_1yooq")]
-position = Vector2(685, 452)
+position = Vector2(1246, 552)
+scale = Vector2(0.3, 0.3)
 
 [node name="penguin" parent="." instance=ExtResource("1_dphjl")]
 position = Vector2(67, 551)
@@ -37,7 +39,7 @@ scale = Vector2(4, 4)
 [node name="void" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
-position = Vector2(640, 755)
+position = Vector2(640, 979)
 scale = Vector2(10, 1)
 shape = SubResource("RectangleShape2D_gb53w")
 
@@ -96,11 +98,16 @@ texture = ExtResource("5_v5dby")
 script = ExtResource("7_bq33v")
 
 [node name="fps-counter" type="Label" parent="."]
-offset_left = 22.0
-offset_top = 21.0
-offset_right = 110.0
-offset_bottom = 56.0
+offset_left = 43.0
+offset_top = 344.0
+offset_right = 131.0
+offset_bottom = 379.0
 script = ExtResource("8_j2gmx")
+
+[node name="Underground" type="Sprite2D" parent="."]
+position = Vector2(640, 815.5)
+scale = Vector2(155.667, 27.2857)
+texture = ExtResource("10_gb53w")
 
 [connection signal="body_entered" from="void" to="penguin" method="_on_void_body_entered"]
 [connection signal="body_entered" from="Iglu/door" to="interaction_keys/E" method="_on_door_body_entered"]

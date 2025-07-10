@@ -15,12 +15,6 @@ func _ready() -> void:
 	# Set initial checkbox state based on current VSync mode
 	vsync_toggle.button_pressed = DisplayServer.window_get_vsync_mode() == DisplayServer.VSYNC_ENABLED
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
-
 # Settings Window handling
 func _on_settings_pressed() -> void:
 	visible = true
@@ -43,17 +37,17 @@ func _on_close_pressed() -> void:
 func _on_vsync_toggled(pressed: bool) -> void:
 	if pressed:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
-		GlobalSettings.config.set_value("graphics", "vsync", true)
-		GlobalSettings.save_settings()
+		SaveLoad.contents_to_save.vsync = true
+		SaveLoad._save()
 	else:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
-		GlobalSettings.config.set_value("graphics", "vsync", false)
-		GlobalSettings.save_settings()
+		SaveLoad.contents_to_save.vsync = false
+		SaveLoad._save()
 
-func _on_fps_toggle_pressed(pressed: bool) -> void:
+func _on_fps_toggle_toggled(pressed: bool) -> void:
 	if pressed:
-		GlobalSettings.config.set_value("graphics", "show_fps", true)
-		GlobalSettings.save_settings()
+		SaveLoad.contents_to_save.show_fps = true
+		SaveLoad._save()
 	else:
-		GlobalSettings.config.set_value("graphics", "show_fps", false)
-		GlobalSettings.save_settings()
+		SaveLoad.contents_to_save.show_fps = false
+		SaveLoad._save()

@@ -2,19 +2,20 @@
 
 [ext_resource type="Script" uid="uid://cwmm2u886dw50" path="res://characters/seal/seal.gd" id="1_plxq0"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fd0yt"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_plxq0"]
+load_path = "res://.godot/imported/Idle1.png-a6af45b0e27b408c2dd8a67b54dd8df3.ctex"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_plxq0"]
-size = Vector2(80, 80)
+[sub_resource type="CircleShape2D" id="CircleShape2D_8rx2d"]
+radius = 150.03
 
 [node name="Seal" type="CharacterBody2D"]
 script = ExtResource("1_plxq0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(80, 80)
-texture = SubResource("PlaceholderTexture2D_fd0yt")
+texture = SubResource("CompressedTexture2D_plxq0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_plxq0")
+position = Vector2(-17, -4)
+shape = SubResource("CircleShape2D_8rx2d")
 
 [connection signal="ready" from="." to="." method="_on_ready"]

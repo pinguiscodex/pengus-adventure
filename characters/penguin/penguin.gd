@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 const SPEED: float = 300.0
-const SLIDE_SPEED: float = 500.0
+const SLIDE_SPEED: float = 550.0
 const JUMP_VELOCITY: float = -400.0
-const DAMPING: float = 800.0  # Higher = quicker slowdown
+const DAMPING: float = 1000.0  # Higher = quicker slowdown
 
 @onready var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim: AnimationPlayer = get_node("AnimationPlayer")
