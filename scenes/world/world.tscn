@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://du506r1ltktke"]
 
-[ext_resource type="PackedScene" uid="uid://cd1g8oq4t2683" path="res://characters/penguin/penguin.tscn" id="1_dphjl"]
+[ext_resource type="PackedScene" uid="uid://cd1g8oq4t2683" path="res://entities/penguin/penguin.tscn" id="1_dphjl"]
 [ext_resource type="Script" uid="uid://d4kg1jtks5c1l" path="res://scenes/world/world.gd" id="1_t5ptc"]
 [ext_resource type="Texture2D" uid="uid://c2tdfe4meop8p" path="res://assets/map/ground/Ground.png" id="2_sl2e5"]
 [ext_resource type="Texture2D" uid="uid://dsuyggsmx2y82" path="res://assets/houses/iglu/Iglu.png" id="3_1fp7r"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d4fef1pxrg137" path="res://assets/user_interactions/key_images/E.PNG" id="5_v5dby"]
 [ext_resource type="Script" uid="uid://b7asn4m3mbx75" path="res://scenes/world/interaction_keys/e.gd" id="7_bq33v"]
 [ext_resource type="Script" uid="uid://d3wupkno0crbp" path="res://scenes/world/fps-counter.gd" id="8_j2gmx"]
-[ext_resource type="PackedScene" uid="uid://cg0vbadlms2jn" path="res://characters/seal/seal.tscn" id="9_1yooq"]
+[ext_resource type="PackedScene" uid="uid://cg0vbadlms2jn" path="res://entities/seal/seal.tscn" id="9_1yooq"]
 [ext_resource type="Texture2D" uid="uid://camwoo4xgbsrp" path="res://assets/map/ground/Underground.png" id="10_gb53w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gb53w"]
