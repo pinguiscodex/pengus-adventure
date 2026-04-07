@@ -313,25 +313,23 @@ animations = [{
 radius = 7.0
 height = 20.0
 
-[node name="penguin" type="CharacterBody2D"]
+[node name="penguin" type="CharacterBody2D" unique_id=1756895893]
 script = ExtResource("1_nfffj")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_nfffj")
-}
-autoplay = "is_sliding"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=164384935]
+libraries/ = SubResource("AnimationLibrary_nfffj")
+autoplay = &"is_sliding"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=135457161]
 position = Vector2(-1, -4)
 sprite_frames = SubResource("SpriteFrames_u7gr3")
 animation = &"Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=758187708]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_w2flb")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1942848160]
 process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true

@@ -24,3 +24,9 @@ func _load():
 		var save_data = data.duplicate()
 		contents_to_save.vsync = save_data.vsync
 		contents_to_save.show_fps = save_data.show_fps
+
+		# Apply VSync setting on load
+		if contents_to_save.vsync:
+			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+		else:
+			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
