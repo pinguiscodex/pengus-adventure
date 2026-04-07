@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg0vbadlms2jn"]
+[gd_scene format=3 uid="uid://cg0vbadlms2jn"]
 
-[ext_resource type="Script" uid="uid://cwmm2u886dw50" path="res://characters/seal/seal.gd" id="1_plxq0"]
+[ext_resource type="Script" uid="uid://cwmm2u886dw50" path="res://entities/seal/seal.gd" id="1_plxq0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_plxq0"]
 load_path = "res://.godot/imported/Idle1.png-a6af45b0e27b408c2dd8a67b54dd8df3.ctex"
