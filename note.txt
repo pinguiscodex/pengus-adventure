@@ -1,0 +1,2 @@
+# NOTE:
+	Color Pallete: #53a8ce #f4f4f4 #197097 #80c8e9

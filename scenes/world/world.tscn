@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://du506r1ltktke"]
+[gd_scene format=3 uid="uid://du506r1ltktke"]
 
 [ext_resource type="PackedScene" uid="uid://cd1g8oq4t2683" path="res://characters/penguin/penguin.tscn" id="1_dphjl"]
 [ext_resource type="Script" uid="uid://d4kg1jtks5c1l" path="res://scenes/world/world.gd" id="1_t5ptc"]
@@ -25,45 +25,46 @@ size = Vector2(600.064, 37.0033)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v5dby"]
 
-[node name="world" type="Node2D"]
+[node name="world" type="Node2D" unique_id=1532512941]
 script = ExtResource("1_t5ptc")
 
-[node name="Seal" parent="." instance=ExtResource("9_1yooq")]
+[node name="Seal" parent="." unique_id=1850266353 instance=ExtResource("9_1yooq")]
 position = Vector2(1246, 552)
 scale = Vector2(0.3, 0.3)
 
-[node name="penguin" parent="." instance=ExtResource("1_dphjl")]
+[node name="penguin" parent="." unique_id=393134328 instance=ExtResource("1_dphjl")]
 position = Vector2(67, 551)
 scale = Vector2(4, 4)
 
-[node name="fps-counter" type="Label" parent="penguin"]
+[node name="fps-counter" type="Label" parent="penguin" unique_id=1681022071]
 offset_left = -151.5
 offset_top = -82.25
 offset_right = -74.5
 offset_bottom = -59.25
 scale = Vector2(0.3, 0.3)
 script = ExtResource("8_j2gmx")
+metadata/_edit_use_anchors_ = true
 
-[node name="void" type="Area2D" parent="."]
+[node name="void" type="Area2D" parent="." unique_id=721239603]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void" unique_id=1944148045]
 position = Vector2(640, 979)
 scale = Vector2(10, 1)
 shape = SubResource("RectangleShape2D_gb53w")
 
-[node name="borders" type="StaticBody2D" parent="."]
+[node name="borders" type="StaticBody2D" parent="." unique_id=473049870]
 
-[node name="border_right" type="CollisionShape2D" parent="borders"]
+[node name="border_right" type="CollisionShape2D" parent="borders" unique_id=300371656]
 position = Vector2(1295.94, 360)
 shape = SubResource("RectangleShape2D_1fp7r")
 
-[node name="border_left" type="CollisionShape2D" parent="borders"]
+[node name="border_left" type="CollisionShape2D" parent="borders" unique_id=1019038258]
 position = Vector2(-15.9688, 360)
 shape = SubResource("RectangleShape2D_6m72w")
 
-[node name="ground" type="StaticBody2D" parent="."]
+[node name="ground" type="StaticBody2D" parent="." unique_id=29154764]
 
-[node name="ground_texture" type="Sprite2D" parent="ground"]
+[node name="ground_texture" type="Sprite2D" parent="ground" unique_id=1661361158]
 texture_repeat = 2
 position = Vector2(640, 659)
 scale = Vector2(3.11304, 3.2973)
@@ -71,41 +72,41 @@ texture = ExtResource("2_sl2e5")
 region_enabled = true
 region_rect = Rect2(0, 0, 600, 37)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=958771157]
 position = Vector2(640, 659)
 scale = Vector2(3.113, 3.297)
 shape = SubResource("RectangleShape2D_v5dby")
 
-[node name="Iglu" type="Sprite2D" parent="."]
+[node name="Iglu" type="Sprite2D" parent="." unique_id=529713757]
 z_index = -1
 position = Vector2(355, 476)
 scale = Vector2(5, 5)
 texture = ExtResource("3_1fp7r")
 
-[node name="door" type="Area2D" parent="Iglu"]
+[node name="door" type="Area2D" parent="Iglu" unique_id=1651175915]
 position = Vector2(-71, -95.2)
 scale = Vector2(0.2, 0.2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Iglu/door"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Iglu/door" unique_id=5402502]
 position = Vector2(355, 540)
 scale = Vector2(3.3, 3.5)
 shape = SubResource("CapsuleShape2D_v5dby")
 
-[node name="wooden_defence_wall" type="Sprite2D" parent="."]
+[node name="wooden_defence_wall" type="Sprite2D" parent="." unique_id=1550282812]
 position = Vector2(940, 518)
 scale = Vector2(10, 10)
 texture = ExtResource("4_6m72w")
 
-[node name="interaction_keys" type="Node2D" parent="."]
+[node name="interaction_keys" type="Node2D" parent="." unique_id=1718551563]
 
-[node name="E" type="Sprite2D" parent="interaction_keys"]
+[node name="E" type="Sprite2D" parent="interaction_keys" unique_id=1446821950]
 visible = false
 position = Vector2(352, 450)
 scale = Vector2(4, 4.375)
 texture = ExtResource("5_v5dby")
 script = ExtResource("7_bq33v")
 
-[node name="Underground" type="Sprite2D" parent="."]
+[node name="Underground" type="Sprite2D" parent="." unique_id=980102575]
 position = Vector2(640, 838.5)
 scale = Vector2(155.667, 33.8571)
 texture = ExtResource("10_gb53w")
