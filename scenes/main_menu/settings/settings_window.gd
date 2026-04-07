@@ -12,8 +12,8 @@ func _ready() -> void:
 	visible = false
 	close.visible = false
 	vsync_toggle.visible = false
-	# Set initial checkbox state based on current VSync mode
-	vsync_toggle.button_pressed = DisplayServer.window_get_vsync_mode() == DisplayServer.VSYNC_ENABLED
+	# Set initial checkbox state based on saved settings
+	vsync_toggle.button_pressed = SaveLoad.contents_to_save.vsync
 
 # Settings Window handling
 func _on_settings_pressed() -> void:
