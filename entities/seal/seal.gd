@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var move_speed: float = 50 # pixels per second
 @onready var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var penguin: Node2D = get_node("../penguin")
+@onready var sprite: Sprite2D = $Sprite2D
 
 func _physics_process(delta: float) -> void:
 	# Apply gravity
@@ -14,8 +15,10 @@ func _physics_process(delta: float) -> void:
 	# Move toward penguin
 	if penguin.position.x > position.x:
 		velocity.x = move_speed
+		sprite.flip_h = true
 	elif penguin.position.x < position.x:
 		velocity.x = -move_speed
+		sprite.flip_h = false
 	else:
 		velocity.x = 0.0
 

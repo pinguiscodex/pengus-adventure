@@ -1,6 +1,6 @@
 extends Node
 
-const save_location = "user://settingsjson"
+const save_location = "user://settings.json"
 
 var contents_to_save: Dictionary = {
 	"vsync": true,
@@ -9,24 +9,33 @@ var contents_to_save: Dictionary = {
 
 func _ready() -> void:
 	_load()
+	apply_settings()
 
-func _save():
+func apply_settings() -> void:
+	if contents_to_save.vsync:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+	else:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+
+func _save() -> void:
 	var file = FileAccess.open(save_location, FileAccess.WRITE)
-	file.store_var(contents_to_save.duplicate())
-	file.close()
-
-func _load():
-	if FileAccess.file_exists(save_location):
-		var file = FileAccess.open(save_location, FileAccess.READ)
-		var data = file.get_var()
+	if file:
+		var json_string = JSON.stringify(contents_to_save, "\t")
+		file.store_string(json_string)
 		file.close()
 
-		var save_data = data.duplicate()
-		contents_to_save.vsync = save_data.vsync
-		contents_to_save.show_fps = save_data.show_fps
+func _load() -> void:
+	if FileAccess.file_exists(save_location):
+		var file = FileAccess.open(save_location, FileAccess.READ)
+		var json_string = file.get_as_text()
+		file.close()
 
-		# Apply VSync setting on load
-		if contents_to_save.vsync:
-			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
-		else:
-			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+		var json = JSON.new()
+		var error = json.parse(json_string)
+		if error == OK:
+			var data = json.data
+			if data is Dictionary:
+				if data.has("vsync"):
+					contents_to_save.vsync = data.vsync
+				if data.has("show_fps"):
+					contents_to_save.show_fps = data.show_fps

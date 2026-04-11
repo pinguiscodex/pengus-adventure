@@ -95,4 +95,5 @@ text = "Show FPS"
 [connection signal="pressed" from="settings" to="settings_window" method="_on_settings_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="settings_window/close" to="settings_window" method="_on_close_pressed"]
+[connection signal="toggled" from="settings_window/vsync_toggle" to="settings_window" method="_on_vsync_toggled"]
 [connection signal="toggled" from="settings_window/fps_toggle" to="settings_window" method="_on_fps_toggle_toggled"]

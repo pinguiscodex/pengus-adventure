@@ -12,18 +12,23 @@ const DAMPING: float = 1000.0  # Higher = quicker slowdown
 var is_sliding: bool = false
 var slide_queued: bool = false
 var slide_direction: int = 0
+var jump_requested: bool = false
 
 func _physics_process(delta: float) -> void:
 	# Gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	else:
+	elif not jump_requested:
 		velocity.y = 0.0  # Optional reset to prevent float buildup
 
 	# Jump
-	if Input.is_action_just_pressed("ui_up") and is_on_floor() and not is_sliding:
+	if Input.is_action_just_pressed("ui_up") and is_on_floor() and not is_sliding and not jump_requested:
+		jump_requested = true
 		velocity.y = JUMP_VELOCITY
 		anim.play("Jump")
+
+	if is_on_floor() and not Input.is_action_pressed("ui_up"):
+		jump_requested = false
 
 	# Input direction
 	var direction := Input.get_axis("ui_left", "ui_right")

@@ -8,13 +8,13 @@ load_path = "res://.godot/imported/Idle1.png-a6af45b0e27b408c2dd8a67b54dd8df3.ct
 [sub_resource type="CircleShape2D" id="CircleShape2D_8rx2d"]
 radius = 150.03
 
-[node name="Seal" type="CharacterBody2D"]
+[node name="Seal" type="CharacterBody2D" unique_id=1970667860]
 script = ExtResource("1_plxq0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2042921277]
 texture = SubResource("CompressedTexture2D_plxq0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=721690656]
 position = Vector2(-17, -4)
 shape = SubResource("CircleShape2D_8rx2d")
 
