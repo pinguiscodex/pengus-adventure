@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j0urqsbtr0e5"
-path="res://.godot/imported/Eisbombeboomende.png-d933931aae597d5f858f268c02539327.ctex"
+uid="uid://bk1p1okkp3tn0"
+path="res://.godot/imported/ice_bomb.png-6322b5591bf650649386f36a634e2427.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/user_interactions/Eisbombeboomende.png"
-dest_files=["res://.godot/imported/Eisbombeboomende.png-d933931aae597d5f858f268c02539327.ctex"]
+source_file="res://assets/weapons/ice_bomb/ice_bomb.png"
+dest_files=["res://.godot/imported/ice_bomb.png-6322b5591bf650649386f36a634e2427.ctex"]
 
 [params]
 

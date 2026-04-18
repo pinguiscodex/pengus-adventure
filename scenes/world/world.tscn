@@ -10,9 +10,10 @@
 [ext_resource type="Script" uid="uid://d3wupkno0crbp" path="res://scenes/world/fps-counter.gd" id="8_j2gmx"]
 [ext_resource type="PackedScene" uid="uid://cg0vbadlms2jn" path="res://entities/seal/seal.tscn" id="9_1yooq"]
 [ext_resource type="Texture2D" uid="uid://camwoo4xgbsrp" path="res://assets/map/ground/Underground.png" id="10_gb53w"]
+[ext_resource type="Script" uid="uid://bw8xqvnq3p7k2" path="res://scripts/interaction_zone.gd" id="11_xr9a2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gb53w"]
-size = Vector2(309, 44)
+size = Vector2(520.5, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fp7r"]
 size = Vector2(31.875, 720)
@@ -21,7 +22,7 @@ size = Vector2(31.875, 720)
 size = Vector2(31.9375, 720)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5dby"]
-size = Vector2(600.064, 37.0033)
+size = Vector2(1670.093, 37.0033)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v5dby"]
 
@@ -48,21 +49,37 @@ metadata/_edit_use_anchors_ = true
 [node name="void" type="Area2D" parent="." unique_id=721239603]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void" unique_id=1944148045]
-position = Vector2(640, 979)
+position = Vector2(776.5, 979)
 scale = Vector2(10, 1)
 shape = SubResource("RectangleShape2D_gb53w")
 
 [node name="borders" type="StaticBody2D" parent="." unique_id=473049870]
 
 [node name="border_right" type="CollisionShape2D" parent="borders" unique_id=300371656]
-position = Vector2(1295.94, 360)
+position = Vector2(2770, 360)
 shape = SubResource("RectangleShape2D_1fp7r")
 
 [node name="border_left" type="CollisionShape2D" parent="borders" unique_id=1019038258]
-position = Vector2(-15.9688, 360)
+position = Vector2(-1200, 360)
 shape = SubResource("RectangleShape2D_6m72w")
 
 [node name="ground" type="StaticBody2D" parent="." unique_id=29154764]
+
+[node name="ground_texture3" type="Sprite2D" parent="ground" unique_id=1527958321]
+texture_repeat = 2
+position = Vector2(-886.066, 659.40155)
+scale = Vector2(3.113, 3.297)
+texture = ExtResource("2_sl2e5")
+region_enabled = true
+region_rect = Rect2(0, 0, 600, 37)
+
+[node name="ground_texture2" type="Sprite2D" parent="ground" unique_id=2045773619]
+texture_repeat = 2
+position = Vector2(2445, 659)
+scale = Vector2(3.113, 3.297)
+texture = ExtResource("2_sl2e5")
+region_enabled = true
+region_rect = Rect2(0, 0, 600, 37)
 
 [node name="ground_texture" type="Sprite2D" parent="ground" unique_id=1661361158]
 texture_repeat = 2
@@ -73,7 +90,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 600, 37)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=958771157]
-position = Vector2(640, 659)
+position = Vector2(779.49994, 659)
 scale = Vector2(3.113, 3.297)
 shape = SubResource("RectangleShape2D_v5dby")
 
@@ -86,6 +103,9 @@ texture = ExtResource("3_1fp7r")
 [node name="door" type="Area2D" parent="Iglu" unique_id=1651175915]
 position = Vector2(-71, -95.2)
 scale = Vector2(0.2, 0.2)
+script = ExtResource("11_xr9a2")
+target_body_name = "penguin"
+visual_indicator_path = NodePath("../../interaction_keys/E")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Iglu/door" unique_id=5402502]
 position = Vector2(355, 540)
@@ -107,11 +127,9 @@ texture = ExtResource("5_v5dby")
 script = ExtResource("7_bq33v")
 
 [node name="Underground" type="Sprite2D" parent="." unique_id=980102575]
-position = Vector2(640, 838.5)
-scale = Vector2(155.667, 33.8571)
+position = Vector2(780.00024, 838.5)
+scale = Vector2(433.6667, 33.8571)
 texture = ExtResource("10_gb53w")
 
 [connection signal="body_entered" from="void" to="penguin" method="_on_void_body_entered"]
-[connection signal="body_entered" from="Iglu/door" to="interaction_keys/E" method="_on_door_body_entered"]
-[connection signal="body_exited" from="Iglu/door" to="interaction_keys/E" method="_on_door_body_exited"]
-[connection signal="ready" from="interaction_keys/E" to="interaction_keys/E" method="_on_ready"]
+[connection signal="interacted" from="Iglu/door" to="." method="_on_door_interacted"]

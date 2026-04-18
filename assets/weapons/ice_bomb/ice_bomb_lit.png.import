@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqskuqfdsp4r"
-path="res://.godot/imported/Eisbombezuenden.png-04e35bc857c65717de20225ac124f8da.ctex"
+path="res://.godot/imported/ice_bomb_lit.png-9e68c06870a2748ce30fa3f117939487.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/waffen/Eisbombe/Eisbombezuenden.png"
-dest_files=["res://.godot/imported/Eisbombezuenden.png-04e35bc857c65717de20225ac124f8da.ctex"]
+source_file="res://assets/weapons/ice_bomb/ice_bomb_lit.png"
+dest_files=["res://.godot/imported/ice_bomb_lit.png-9e68c06870a2748ce30fa3f117939487.ctex"]
 
 [params]
 
